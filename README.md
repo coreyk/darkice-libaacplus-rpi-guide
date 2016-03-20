@@ -3,7 +3,10 @@
 to facilitate streaming audio from one of these turntables with USB audio codec output
 - Audio Technica AT-LP120-USB (http://amzn.to/1TZvF2y)
 - Ion TTUSB or Max (http://amzn.to/1Uv6KDY)
-
+via a Raspberry Pi B or B+
+- Raspberry Pi B+ (http://amzn.to/1LzwOeh)
+- Raspberry PI B (http://amzn.to/21ChHCJ)
+using Raspbian Jessie (https://www.raspberrypi.org/downloads/raspbian/)
 
 ## Dependencies
 ```
