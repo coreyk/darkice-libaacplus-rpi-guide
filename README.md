@@ -15,6 +15,10 @@ using Raspbian Jessie (https://www.raspberrypi.org/downloads/raspbian/)
 ```
 sudo apt-get install libmp3lame-dev; sudo apt-get install autoconf; sudo apt-get install libtool; sudo apt-get install checkinstall; sudo apt-get install libssl-dev; apt-get install libasound2-dev; apt-get install libmp3lame-dev; apt-get install libpulse-dev
 ```
+## Install icecast2
+```
+apt-get install icecast2
+```
 
 ## Compiling libaacplus
 ```
@@ -108,7 +112,7 @@ format          = aacp
 bitrate         = 64
 server          = localhost
 port            = 8000
-password        = SOURCE_PASSWORD
+password        = SOURCE_PASSWORD   # or whatever you set your icecast2 password to
 mountPoint      = listen
 name            = Vinyl
 description     = DarkIce on Raspberry Pi
