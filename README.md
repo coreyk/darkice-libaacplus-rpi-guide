@@ -90,7 +90,7 @@ make install
 ```
 # this section describes general aspects of the live streaming session
 [general]
-duration        = 0        # duration of encoding, in seconds. 0 means forever
+duration        = 0         # duration of encoding, in seconds. 0 means forever
 bufferSecs      = 1         # size of internal slip buffer, in seconds
 reconnect       = yes       # reconnect to the server(s) if disconnected
 realtime        = yes       # run the encoder with POSIX realtime priority
@@ -98,8 +98,8 @@ rtprio          = 3         # scheduling priority for the realtime threads
 
 # this section describes the audio input that will be streamed
 [input]
-device          = hw:1,0  # OSS DSP soundcard device for the audio input
-sampleRate      = 48000     # sample rate in Hz. try 11025, 22050 or 44100
+device          = hw:1,0    # OSS DSP soundcard device for the audio input
+sampleRate      = 48000     # other settings have crackling audo, esp. 44100
 bitsPerSample   = 16        # bits per sample. try 16
 channel         = 2         # channels. 1 = mono, 2 = stereo
 
