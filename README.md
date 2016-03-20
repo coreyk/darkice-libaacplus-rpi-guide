@@ -1,5 +1,9 @@
 # Compilation guide
 ## for darkice, libaacplus, et al on raspberry pi running raspbian jessie
+to facilitate streaming audio from one of these turntables with USB audio codec output
+- Audio Technica AT-LP120-USB (http://amzn.to/1TZvF2y)
+- Ion TTUSB or Max (http://amzn.to/1Uv6KDY)
+
 
 ## Dependencies
 ```
@@ -46,10 +50,64 @@ char *strcasestr(const char *haystack, const char *needle);
 }
 #endif
 ```
+## Get darkice source
+enable the raspbian source repo
+```
+vi /etc/apt/sources.list
+```
+uncomment the deb-src line
+```
+deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi
+```
+get the source
+```
+cd ~
+mkdir src
+cd src
+apt-get source darkice
+cd darkice-1.2
+```
+
 ## Compiling darkice
 
 ```
 ./configure --with-aacplus --with-aacplus-prefix=/usr/local --with-pulseaudio --with-pulseaudio-prefix=/usr/lib/arm-linux-gnueabihf --with-lame --with-lame-prefix=/usr/lib/arm-linux-gnueabihf --with-alsa --with-alsa-prefix=/usr/lib/arm-linux-gnueabihf --with-jack --with-jack-prefix=/usr/lib/arm-linux-gnueabihf --with-faac --with-faac-prefix=/usr/local
 make
 make install
+```
+
+## Configure /etc/darkice.cfg
+```
+# this section describes general aspects of the live streaming session
+[general]
+duration        = 0        # duration of encoding, in seconds. 0 means forever
+bufferSecs      = 1         # size of internal slip buffer, in seconds
+reconnect       = yes       # reconnect to the server(s) if disconnected
+realtime        = yes       # run the encoder with POSIX realtime priority
+rtprio          = 3         # scheduling priority for the realtime threads
+
+# this section describes the audio input that will be streamed
+[input]
+device          = hw:1,0  # OSS DSP soundcard device for the audio input
+sampleRate      = 48000     # sample rate in Hz. try 11025, 22050 or 44100
+bitsPerSample   = 16        # bits per sample. try 16
+channel         = 2         # channels. 1 = mono, 2 = stereo
+
+# this section describes a streaming connection to an IceCast2 server
+# there may be up to 8 of these sections, named [icecast2-0] ... [icecast2-7]
+# these can be mixed with [icecast-x] and [shoutcast-x] sections
+[icecast2-0]
+bitrateMode     = cbr
+format          = aacp
+bitrate         = 64
+server          = localhost
+port            = 8000
+password        = SOURCE_PASSWORD
+mountPoint      = listen
+name            = Vinyl
+description     = DarkIce on Raspberry Pi
+url             = http://localhost
+genre           = vinyl
+public          = no
+localDumpFile   = recording.m4a
 ```
