@@ -61,7 +61,7 @@ enable the raspbian source repo
 ```
 vi /etc/apt/sources.list
 ```
-uncomment the deb-src line
+uncomment or add the deb-src line
 ```
 deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi
 ```
