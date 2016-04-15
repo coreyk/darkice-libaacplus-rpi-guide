@@ -121,3 +121,63 @@ genre           = vinyl
 public          = no
 localDumpFile   = recording.m4a
 ```
+
+## Autostart darkice
+These are from an Ubuntu install and don't exactly match the startup script, but they are close enough and do solve the startup problem
+
+### 1
+In /etc/init.d/darkice find:
+```
+start-stop-daemon --start --quiet --pidfile $PIDFILE \
+```
+and replace it with:
+```
+start-stop-daemon --start --quiet -m --pidfile $PIDFILE \
+```
+
+### 2
+In /etc/init.d/darkice find:
+```
+stop_server() {
+# Stop the process using the wrapper
+        start-stop-daemon --stop --quiet --pidfile $PIDFILE \
+            --exec $DAEMON
+        errcode=$?
+```
+add after (with the new line):
+```
+    rm $PIDFILE
+```
+
+### 3 
+In /etc/init.d/darkice find:
+```
+running() {
+# Check if the process is running looking at /proc
+# (works for all users)
+```
+add after (with the new line):
+```
+    sleep 1
+```
+
+### 4
+In /etc/default/darkice check that you have
+```
+RUN=yes
+```
+
+### 5
+Add default user nobody to the audio group (in my case, to work with ALSA):
+```
+adduser nobody audio
+```
+
+### 6
+Fix upstart problem (it seems Darkice is trying to start on boot too early):
+```
+update-rc.d -f darkice remove
+update-rc.d darkice defaults 99
+```
+
+See [this forum](http://ubuntuforums.org/showthread.php?t=2183222)
