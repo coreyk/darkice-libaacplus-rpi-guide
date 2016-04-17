@@ -12,7 +12,7 @@ via a Raspberry Pi B or B+
 using Raspbian Jessie (https://www.raspberrypi.org/downloads/raspbian/)
 
 ## Install raspbian
-For a < 4GB install, use the [raspbian-ua-netinst](https://github.com/debian-pi/raspbian-ua-netinst) minimal net installer. Grab [Pi Filler] to write the image to your 2GB or less SD card. Then create the file `installer-config.txt` in the root of the card next to `config.txt` and add the following to make sure sshd is running (via [here](https://github.com/debian-pi/raspbian-ua-netinst#installer-customization):
+For a < 4GB install, use the [raspbian-ua-netinst](https://github.com/debian-pi/raspbian-ua-netinst) minimal net installer. Grab [Pi Filler](http://ivanx.com/raspberrypi/) to write the image to your 2GB or less SD card. Then create the file `installer-config.txt` in the root of the card next to `config.txt` and add the following to make sure sshd is running (via [here](https://github.com/debian-pi/raspbian-ua-netinst#installer-customization):
 ```
 preset=server
 packages= # comma separated list of extra packages
