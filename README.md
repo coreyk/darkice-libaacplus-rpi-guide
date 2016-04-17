@@ -152,9 +152,11 @@ localDumpFile   = recording.m4a
 ```
 aptitude install icecast2
 ```
+For the hostname, use `vinyl`, and for both *hackme* passwords, use `vinyl`
 
+Then, for the admin password, leave it blank unless you trust no one
 
-Note: heaven forbid you mess up the icecast2 text GUI congiguration... you'll need to run
+Note: heaven forbid you mess up the icecast2 text GUI config... you'll need to run
 ```
 apt-get autoremove icecast2
 apt-get purge icecast2
