@@ -55,7 +55,7 @@ make
 sudo make install
 ```
 
-## Compliling libx264
+## Compliling libx264 (not required, SKIP)
 ```
 cd /home/pi/src
 git clone git://git.videolan.org/x264
@@ -65,7 +65,7 @@ make
 sudo make install
 ```
 
-## Compiling libfaac (not required)
+## Compiling libfaac (not required, SKIP)
 ```
 cd /home/pi/src
 curl -#LO http://downloads.sourceforge.net/project/faac/faac-src/faac-1.28/faac-1.28.tar.gz
@@ -107,10 +107,12 @@ cd darkice-1.2
 ## Compiling darkice
 
 ```
-./configure --with-aacplus --with-aacplus-prefix=/usr/local --with-pulseaudio --with-pulseaudio-prefix=/usr/lib/arm-linux-gnueabihf --with-lame --with-lame-prefix=/usr/lib/arm-linux-gnueabihf --with-alsa --with-alsa-prefix=/usr/lib/arm-linux-gnueabihf --with-jack --with-jack-prefix=/usr/lib/arm-linux-gnueabihf --with-faac --with-faac-prefix=/usr/local
+./configure --with-aacplus --with-aacplus-prefix=/usr/local --with-pulseaudio --with-pulseaudio-prefix=/usr/lib/arm-linux-gnueabihf --with-lame --with-lame-prefix=/usr/lib/arm-linux-gnueabihf --with-alsa --with-alsa-prefix=/usr/lib/arm-linux-gnueabihf --with-jack --with-jack-prefix=/usr/lib/arm-linux-gnueabihf
 make
 make install
 ```
+
+Had `--with-faac --with-faac-prefix=/usr/local` in there, but faac doesn't work with icecast2/darkice
 
 ## Configure /etc/darkice.cfg
 ```
