@@ -137,7 +137,9 @@ channel         = 2         # channels. 1 = mono, 2 = stereo
 # these can be mixed with [icecast-x] and [shoutcast-x] sections
 [icecast2-0]
 bitrateMode     = cbr
+# format          = mp3
 format          = aacp
+# bitrate         = 320
 bitrate         = 64
 server          = vinyl
 port            = 8000
@@ -244,3 +246,6 @@ update-rc.d darkice defaults 99
 ```
 
 See [this forum](http://ubuntuforums.org/showthread.php?t=2183222)
+
+## Final note
+While AAC+ is neat, on a local network you might as well stream 320Kbps MP3 for better sound quality, or if you're so inclined, uncompressed WAV 
