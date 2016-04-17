@@ -176,6 +176,16 @@ These are from an Ubuntu install and don't exactly match the startup script, but
 ### 1
 In /etc/init.d/darkice find:
 ```
+DAEMON=/usr/bin/$NAME
+```
+and change it to the AAC+ complied version:
+```
+DAEMON=/usr/local/bin/$NAME
+```
+
+### 2
+In /etc/init.d/darkice find:
+```
 start-stop-daemon --start --quiet --pidfile $PIDFILE \
 ```
 and replace it with:
@@ -183,7 +193,7 @@ and replace it with:
 start-stop-daemon --start --quiet -m --pidfile $PIDFILE \
 ```
 
-### 2
+### 3
 In /etc/init.d/darkice find:
 ```
 stop_server() {
@@ -197,7 +207,7 @@ add after (with the new line):
     rm $PIDFILE
 ```
 
-### 3 
+### 4
 In /etc/init.d/darkice find:
 ```
 running() {
@@ -209,24 +219,24 @@ add after (with the new line):
     sleep 1
 ```
 
-### 4
+### 5
 In /etc/default/darkice check that you have
 ```
 RUN=yes
 ```
 
-### 5
+### 6
 ```
 systemctl daemon-reload
 ```
 
-### 6
+### 7
 Add default user nobody to the audio group (in my case, to work with ALSA):
 ```
 adduser nobody audio
 ```
 
-### 7
+### 8
 Fix upstart problem (it seems Darkice is trying to start on boot too early):
 ```
 update-rc.d -f darkice remove
