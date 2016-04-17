@@ -92,7 +92,8 @@ vi /etc/apt/sources.list
 ```
 uncomment or add the deb-src line
 ```
-deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi
+deb-src http://archive.raspbian.org/raspbian jessie main contrib non-free rpi
+apt-get update
 ```
 get the source
 ```
