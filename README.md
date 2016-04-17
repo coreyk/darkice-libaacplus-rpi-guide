@@ -42,7 +42,7 @@ Power up your pi, wait about 15 minutes for the netinstall to complete, and ssh 
 
 ## Dependencies
 ```
-apt-get -y install aptitude apt-utils sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev alsa-utils
+apt-get -y install aptitude apt-utils sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev alsa-utils avahi-daemon
 ```
 
 ## Compiling libaacplus
@@ -138,13 +138,13 @@ channel         = 2         # channels. 1 = mono, 2 = stereo
 bitrateMode     = cbr
 format          = aacp
 bitrate         = 64
-server          = localhost
+server          = vinyl
 port            = 8000
-password        = SOURCE_PASSWORD   # or whatever you set your icecast2 password to
+password        = vinyl   # or whatever you set your icecast2 password to
 mountPoint      = listen
 name            = Vinyl
 description     = DarkIce on Raspberry Pi
-url             = http://localhost
+url             = http://vinyl
 genre           = vinyl
 public          = no
 localDumpFile   = recording.m4a
