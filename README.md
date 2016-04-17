@@ -42,8 +42,9 @@ Power up your pi, wait about 15 minutes for the netinstall to complete, and ssh 
 
 ## Dependencies
 ```
-apt-get -y install aptitude apt-utils sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev alsa-utils avahi-daemon
+apt-get -y install aptitude apt-utils sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev alsa-utils avahi-daemon darkice
 ```
+We will install the darkice package, but compile it later to add AAC+ support
 
 ## Compiling libaacplus
 ```
