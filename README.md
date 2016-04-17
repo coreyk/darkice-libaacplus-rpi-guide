@@ -65,7 +65,7 @@ make
 sudo make install
 ```
 
-## Compiling libfaac
+## Compiling libfaac (not required)
 ```
 cd /home/pi/src
 curl -#LO http://downloads.sourceforge.net/project/faac/faac-src/faac-1.28/faac-1.28.tar.gz
