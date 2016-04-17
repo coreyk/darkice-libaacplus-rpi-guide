@@ -42,7 +42,7 @@ Power up your pi, wait about 15 minutes for the netinstall to complete, and ssh 
 
 ## Dependencies
 ```
-apt-get -y install aptitude apt-utils sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev
+apt-get -y install aptitude apt-utils sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev alsa-utils
 ```
 
 ## Compiling libaacplus
