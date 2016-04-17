@@ -1,5 +1,5 @@
-# Compilation guide
-## for darkice, libaacplus, et al on raspberry pi running raspbian jessie
+# USB Turntable to Sonos or Pi Musicbox streaming guide
+## for darkice, libaacplus, et al on raspberry pi with raspbian jessie netinstall
 to facilitate streaming audio from one of these turntables with USB audio codec output
 - Audio Technica AT-LP120-USB (http://amzn.to/1TZvF2y)
 - Ion TTUSB or Max (http://amzn.to/1Uv6KDY)
@@ -42,12 +42,7 @@ Power up your pi, wait about 15 minutes for the netinstall to complete, and ssh 
 
 ## Dependencies
 ```
-apt-get -y install aptitude sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev
-```
-
-## icecast2
-```
-aptitude install icecast2
+apt-get -y install aptitude apt-utils sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev
 ```
 
 ## Compiling libaacplus
@@ -152,6 +147,23 @@ genre           = vinyl
 public          = no
 localDumpFile   = recording.m4a
 ```
+
+## icecast2
+```
+aptitude install icecast2
+```
+
+
+Note: heaven forbid you mess up the icecast2 text GUI congiguration... you'll need to run
+```
+apt-get autoremove icecast2
+apt-get purge icecast2
+```
+and then reinstall it
+```
+aptitude install icecast2
+```
+to get that crappy GUI back... unless there's an easier, undocumented way? and even then, where are the icecast.xml config files? not in /etc/icecast2/ ...
 
 ## Autostart darkice
 These are from an Ubuntu install and don't exactly match the startup script, but they are close enough and do solve the startup problem
