@@ -40,14 +40,9 @@ rootfs_mount_options='errors=remount-ro,noatime'
 ```
 Power up your pi, wait about 15 minutes for the netinstall to complete, and ssh in as *root* with the password *raspbian*.
 
-## Dependencies
+## Dependencies, icecast2
 ```
-apt-get install sudo
-sudo apt-get install libmp3lame-dev; sudo apt-get install autoconf; sudo apt-get install libtool; sudo apt-get install checkinstall; sudo apt-get install libssl-dev; apt-get install libasound2-dev; apt-get install libmp3lame-dev; apt-get install libpulse-dev
-```
-## Install icecast2
-```
-apt-get install icecast2
+apt-get -y install sudo libmp3lame-dev autoconf libtool checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev icecast2
 ```
 
 ## Compiling libaacplus
