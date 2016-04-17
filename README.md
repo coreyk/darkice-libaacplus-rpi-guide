@@ -11,8 +11,38 @@ via a Raspberry Pi B or B+
 
 using Raspbian Jessie (https://www.raspberrypi.org/downloads/raspbian/)
 
+## Install raspbian
+For a < 4GB install, use the [raspbian-ua-netinst](https://github.com/debian-pi/raspbian-ua-netinst) minimal net installer. Grab [Pi Filler] to write the image to your 2GB or less SD card. Then create the file `installer-config.txt` in the root of the card next to `config.txt` and add the following to make sure sshd is running (via [here](https://github.com/debian-pi/raspbian-ua-netinst#installer-customization):
+```
+preset=server
+packages= # comma separated list of extra packages
+mirror=http://mirrordirector.raspbian.org/raspbian/
+release=jessie
+hostname=pi
+domainname=
+rootpw=raspbian
+cdebootstrap_cmdline=
+bootsize=+128M # /boot partition size in megabytes, provide it in the form '+<number>M' (without quotes)
+rootsize=     # / partition size in megabytes, provide it in the form '+<number>M' (without quotes), leave empty to use all free space
+timeserver=time.nist.gov
+ip_addr=dhcp
+ip_netmask=0.0.0.0
+ip_broadcast=0.0.0.0
+ip_gateway=0.0.0.0
+ip_nameservers=
+online_config= # URL to extra config that will be executed after installer-config.txt
+usbroot= # set to 1 to install to first USB disk
+cmdline="dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 elevator=deadline"
+rootfstype=ext4
+rootfs_mkfs_options=
+rootfs_install_mount_options='noatime,data=writeback,nobarrier,noinit_itable'
+rootfs_mount_options='errors=remount-ro,noatime'
+```
+Power up your pi, wait about 15 minutes for the netinstall to complete, and ssh in as *root* with the password *raspbian*.
+
 ## Dependencies
 ```
+apt-get install sudo
 sudo apt-get install libmp3lame-dev; sudo apt-get install autoconf; sudo apt-get install libtool; sudo apt-get install checkinstall; sudo apt-get install libssl-dev; apt-get install libasound2-dev; apt-get install libmp3lame-dev; apt-get install libpulse-dev
 ```
 ## Install icecast2
