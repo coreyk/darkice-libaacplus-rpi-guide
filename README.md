@@ -42,7 +42,7 @@ Power up your pi, wait about 15 minutes for the netinstall to complete, and ssh 
 
 ## Dependencies, icecast2
 ```
-apt-get -y install sudo autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev icecast2
+apt-get -y install sudo unzip autoconf libtool libtool-bin checkinstall libssl-dev libasound2-dev libmp3lame-dev libpulse-dev icecast2
 ```
 
 ## Compiling libaacplus
