@@ -216,12 +216,17 @@ RUN=yes
 ```
 
 ### 5
+```
+systemctl daemon-reload
+```
+
+### 6
 Add default user nobody to the audio group (in my case, to work with ALSA):
 ```
 adduser nobody audio
 ```
 
-### 6
+### 7
 Fix upstart problem (it seems Darkice is trying to start on boot too early):
 ```
 update-rc.d -f darkice remove
