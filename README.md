@@ -234,6 +234,7 @@ It should work now, so connect your streaming client up to (http://vinyl.local:8
 ## Icecast2 admin
 is located at (http://vinyl.local:8000) and is good for checking the status of connected clients
 
+## More info
 See [this forum](http://ubuntuforums.org/showthread.php?t=2183222)
 
 ## Final note
