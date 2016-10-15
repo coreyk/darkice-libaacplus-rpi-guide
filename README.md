@@ -242,6 +242,13 @@ Or switch to [Volumio](https://volumio.org).
 ## Icecast2 admin
 is located at (http://vinyl.local:8000) and is good for checking the status of connected clients
 
+## RPi temp
+Check the temp of your RPi 3 with
+```
+/opt/vc/bin/vcgencmd measure_temp
+```
+if you're running without a heatsink, best to keep it below 70C
+
 ## More info
 See [this forum](http://ubuntuforums.org/showthread.php?t=2183222)
 
