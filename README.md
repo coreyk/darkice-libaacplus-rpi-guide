@@ -1,5 +1,5 @@
 # USB Turntable to Sonos or Pi Musicbox streaming guide
-## for darkice, libaacplus, et al on raspberry pi with raspbian jessie netinstall
+## for darkice, libaacplus, et al on Raspberry Pi 3 with Raspbian Jessie Lite
 to facilitate streaming audio from one of these turntables with USB audio codec output
 - [Audio-Technica AT-LP60-USB](http://amzn.to/2dSVrGz)
 - [Audio-Technica AT-LP120-USB](http://amzn.to/2drytFC)
@@ -232,6 +232,10 @@ update-rc.d darkice defaults 99
 
 ## Reboot and connect to your USB turntable
 It should work now, so connect your streaming client up to (http://vinyl.local:8000/listen.m3u) and put on a record.
+
+On Sonos, add your streaming turntable URL (http://vinyl.local:8000/listen.m3u) by [adding a custom Internet radio station](https://sonos.custhelp.com/app/answers/detail/a_id/264/~/how-to-add-an-internet-radio-station-to-sonos).
+
+On Pi Musicbox, add the URL to your `/boot/config/radiostations.js` file or use the GUI. Or switch to [Volumio](https://volumio.org).
 
 ## Icecast2 admin
 is located at (http://vinyl.local:8000) and is good for checking the status of connected clients
