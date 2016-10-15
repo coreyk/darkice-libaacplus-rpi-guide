@@ -1,8 +1,10 @@
 # USB Turntable to Sonos or Pi Musicbox streaming guide
 ## for darkice, libaacplus, et al on raspberry pi with raspbian jessie netinstall
 to facilitate streaming audio from one of these turntables with USB audio codec output
-- Audio Technica AT-LP120-USB (http://amzn.to/1TZvF2y)
-- Ion TTUSB or Max (http://amzn.to/1Uv6KDY)
+- [Audio-Technica AT-LP60-USB](http://amzn.to/2dSVrGz)
+- [Audio-Technica AT-LP120-USB](http://amzn.to/2drytFC)
+- [ION Audio Classic LP | 3-Speed USB](http://amzn.to/2e3piLt)
+- [Sony PSLX300USB](http://amzn.to/2dW2Xm7)
 
 via a Raspberry Pi 3 (or older, but why?)
 
