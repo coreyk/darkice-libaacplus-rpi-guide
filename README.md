@@ -235,7 +235,9 @@ It should work now, so connect your streaming client up to (http://vinyl.local:8
 
 On Sonos, add your streaming turntable URL (http://vinyl.local:8000/listen.m3u) by [adding a custom Internet radio station](https://sonos.custhelp.com/app/answers/detail/a_id/264/~/how-to-add-an-internet-radio-station-to-sonos).
 
-On Pi Musicbox, add the URL to your `/boot/config/radiostations.js` file or use the GUI. Or switch to [Volumio](https://volumio.org).
+On Pi Musicbox, add the URL to your `/boot/config/radiostations.js` file or use the GUI.
+
+Or switch to [Volumio](https://volumio.org).
 
 ## Icecast2 admin
 is located at (http://vinyl.local:8000) and is good for checking the status of connected clients
