@@ -41,6 +41,10 @@ Set your Raspbian system hostname by editing `/etc/hostname` and change `raspber
 ```
 vinyl
 ```
+and also the line in `/etc/hosts` from raspberrypi to:
+```
+127.0.1.1       vinyl
+```
 
 Then install a bunch of needed packages:
 ```
@@ -223,6 +227,12 @@ Fix upstart problem (it seems Darkice is trying to start on boot too early):
 update-rc.d -f darkice remove
 update-rc.d darkice defaults 99
 ```
+
+## Reboot and connect to your USB turntable
+It should work now, so connect your streaming client up to (http://vinyl.local:8000/listen.m3u) and put on a record.
+
+## Icecast2 admin
+is located at (http://vinyl.local:8000) and is good for checking the status of connected clients
 
 See [this forum](http://ubuntuforums.org/showthread.php?t=2183222)
 
